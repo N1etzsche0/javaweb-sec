@@ -32,6 +32,9 @@ public class DeserializationTest implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	private void readObject(java.io.ObjectInputStream in) throws IOException, ClassNotFoundException {
+		Runtime.getRuntime().exec("terminator");
+	}
 
 	public static void main(String[] args) {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
